@@ -164,9 +164,9 @@ window.MENU_PRODUCTS = [
 // Loja
 window.STORE_INFO = {
   name: 'Jacaré Burguer',
-  tagline: 'Sabor que impressiona desde 2019',
-  address: 'Rua Carvalho Leme, 557 — Centro',
-  city: 'Pato Branco, PR',
+  tagline: 'Sabor que impressiona desde 2025',
+  address: 'Chopinzinho, PR',
+  city: 'Chopinzinho, PR',
   whatsapp: '5546999113599',
   whatsappDisplay: '(46) 99911-3599',
   instagram: 'jacare_burger_',
