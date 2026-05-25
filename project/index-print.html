@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jacaré Burguer · Cardápio</title>
+  <meta name="description" content="Hambúrguer artesanal em Pato Branco. Peça pelo WhatsApp."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="styles.css"/>
+
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg"/>
+
+  <style>
+    /* Force colors/backgrounds for screen preview and print */
+    html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    @page {
+      size: A4 portrait;
+      margin: 10mm;
+    }
+
+    @media print {
+      html, body {
+        background: #0a0807 !important;
+      }
+      /* Hide interactive / out-of-print chrome */
+      .topbar,
+      .topbar__back,
+      .topbar__cart,
+      .topbar__nav,
+      .topbar__status,
+      .fab-cart,
+      .cart-drawer,
+      .cart-overlay,
+      .card__add,
+      .card__add-row,
+      .qty,
+      .featured-card .card__add,
+      .hero__cta,
+      .promo-strip,
+      .catnav-wrap,
+      .foot__bottom .legal,
+      footer .foot__cols .foot__col:nth-child(2),
+      footer .foot__cols .foot__col:nth-child(3) {
+        display: none !important;
+      }
+
+      /* Page wraps shouldn't fix to viewport */
+      .hero,
+      .menu,
+      .info-strip,
+      .foot {
+        page-break-inside: auto;
+      }
+
+      /* Avoid splitting cards / tiles across pages */
+      .card,
+      .featured-card,
+      .info-tile {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      /* Section heads ride with their content */
+      .menu__sec-head { break-after: avoid; page-break-after: avoid; }
+
+      /* Each menu section on its own page */
+      .menu__sec { break-before: page; page-break-before: page; }
+      .menu__sec:first-of-type { break-before: auto; page-break-before: auto; }
+
+      /* Tighten layout for paper */
+      body { font-size: 12px; }
+      .hero__inner { padding: 18px 0 24px !important; gap: 24px !important; }
+      .hero__visual { display: none !important; } /* save space — keep copy + meta */
+      .hero__title { font-size: 56px !important; line-height: 0.9 !important; margin-bottom: 10px !important; }
+      .hero__sub { font-size: 13px !important; margin-bottom: 14px !important; }
+      .hero__meta { margin-top: 14px !important; padding-top: 12px !important; }
+
+      .menu { padding: 18px 0 !important; }
+      .menu__sec { padding: 0 16px !important; }
+      .menu__sec-head { margin-bottom: 14px !important; padding-bottom: 8px !important; }
+      .menu__sec-head h2 { font-size: 30px !important; }
+
+      .grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+      }
+      .featured-row {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+      }
+      .card { border-width: 1px !important; }
+      .card__img { aspect-ratio: 16 / 10 !important; }
+      .card__title { font-size: 18px !important; }
+      .card__tagline { font-size: 11px !important; }
+      .card__price { font-size: 22px !important; }
+      .featured-card { grid-template-columns: 110px 1fr !important; }
+
+      .info-strip { padding: 22px 16px !important; gap: 12px !important; }
+
+      .foot { padding: 24px 16px 16px !important; }
+      .foot__bottom { padding-top: 10px !important; }
+
+      /* Anchors look fine in dark theme, drop underlines */
+      a { text-decoration: none !important; }
+
+      /* Show a small print-only footer with WhatsApp + endereço */
+      .print-banner {
+        display: flex !important;
+      }
+    }
+
+    /* Screen-only: hint that this is the print version */
+    .print-banner {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 16px;
+      background: #1c1611;
+      border-top: 1px solid rgba(255,182,39,0.22);
+      color: #F5EDDB;
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+    .print-banner strong { color: #FFB627; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script src="menu-data.js"></script>
+  <script type="text/babel" src="cardapio-app.jsx"></script>
+
+  <script type="text/babel" data-presets="env,react">
+    // Wait for: fonts loaded, React app mounted, then a small grace period — then print.
+    (async () => {
+      try {
+        if (document.fonts && document.fonts.ready) {
+          await document.fonts.ready;
+        }
+        // Wait for React to mount the menu sections
+        const waitForMount = () => new Promise((resolve) => {
+          const start = Date.now();
+          const tick = () => {
+            const ready = document.querySelector('.menu__sec') || document.querySelector('.hero__title');
+            if (ready || Date.now() - start > 6000) resolve();
+            else requestAnimationFrame(tick);
+          };
+          tick();
+        });
+        await waitForMount();
+        await new Promise((r) => setTimeout(r, 700));
+        window.print();
+      } catch (e) {
+        console.error('Print sequence failed', e);
+        setTimeout(() => window.print(), 1200);
+      }
+    })();
+  </script>
+</body>
+</html>
