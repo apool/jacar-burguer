@@ -193,7 +193,7 @@ function Hero() {
 // Promo Marquee
 // ─────────────────────────────────────────────
 function PromoStrip() {
-  const items = ['Entrega Grátis no Centro', 'Combo Smash R$ 39,99', 'Quarta é dia de Combo', 'Hambúrguer Artesanal desde 2019', 'Carne de Costela 180g', 'Sabor que Impressiona'];
+  const items = ['Entrega Grátis no Centro', 'Combo Smash R$ 39,99', 'Quarta é dia de Combo', 'Hambúrguer Artesanal desde 2025', 'Carne de Costela 180g', 'Sabor que Impressiona'];
   const doubled = [...items, ...items];
   return (
     <div className="promo-strip">
@@ -688,7 +688,7 @@ function Footer() {
       </div>
 
       <div className="foot__bottom">
-        <span>© 2026 Jacaré Burguer · Sabor que impressiona desde 2019</span>
+        <span>© 2026 Jacaré Burguer · Sabor que impressiona desde 2025</span>
         <span>Feito com 🔥 · Cardápio digital</span>
       </div>
     </footer>);
