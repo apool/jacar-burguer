@@ -1,22 +1,53 @@
-# CODING AGENTS: READ THIS FIRST
+# Jacaré Burguer — Cardápio Digital
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Site de cardápio digital para a **Jacaré Burguer**, hamburgueria artesanal localizada em Pato Branco, PR.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Sobre o projeto
 
-## What you should do — IMPORTANT
+Cardápio interativo construído com React (via CDN), sem necessidade de build ou servidor. Basta abrir o `index.html` no navegador.
 
-**Find the primary design file under `jacar-burguer/project/` and read it top to bottom.** Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Funcionalidades
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+- Cardápio completo com categorias: Destaques, Smash, Artesanais, Combos, Acompanhamentos e Bebidas
+- Filtro por categoria
+- Modal com ingredientes de cada item
+- Botão de pedido direto pelo WhatsApp
+- Layout responsivo (mobile e desktop)
+- Versão para impressão (`index-print.html`)
 
-## About the design files
+## Estrutura
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+```
+project/
+├── index.html          # Página principal
+├── index-print.html    # Versão para impressão
+├── styles.css          # Estilos
+├── menu-data.js        # Dados do cardápio (produtos, preços, loja)
+├── cardapio-app.jsx    # Componente React principal
+├── assets/             # Fotos dos burgers e logo
+└── uploads/            # Fotos adicionais
+```
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## Como usar
 
-## Bundle contents
+Abra o arquivo `project/index.html` diretamente no navegador. Não precisa de servidor, instalação ou build.
 
-- `jacar-burguer/README.md` — this file
-- `jacar-burguer/project/` — the `Jacaré Burguer` project files (HTML prototypes, assets, components)
+Para atualizar o cardápio, edite o arquivo `project/menu-data.js`.
+
+## Informações da loja
+
+| | |
+|---|---|
+| Endereço | Rua Carvalho Leme, 557 — Centro, Pato Branco, PR |
+| WhatsApp | (46) 99911-3599 |
+| Instagram | [@jacare_burger_](https://instagram.com/jacare_burger_) |
+| Horário | Quarta a Domingo: 18:30 – 23:30 |
+| Delivery | Grátis no centro · R$ 5,00 demais bairros |
+| Pedido mínimo | R$ 25,00 |
+
+## Tecnologias
+
+- React 18 (CDN)
+- Babel Standalone (JSX no browser)
+- CSS puro
+- Google Fonts (Anton + Outfit)
