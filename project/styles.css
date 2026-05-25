@@ -368,9 +368,27 @@ input, select { font-family: inherit; }
 }
 
 @media (max-width: 880px) {
-  .hero__inner { grid-template-columns: 1fr; gap: 24px; }
-  .hero__visual { aspect-ratio: 1; max-height: 380px; }
-  .hero { padding: 24px 16px; }
+  .hero__inner { grid-template-columns: 1fr; gap: 0; }
+  .hero { padding: 0; }
+  .hero__visual { display: none; }
+
+  .hero__copy {
+    position: relative;
+    background-image: url('assets/mascot-hero.jpg');
+    background-size: cover;
+    background-position: center top;
+    border-radius: 0;
+    padding: 32px 20px 36px;
+    overflow: hidden;
+  }
+  .hero__copy::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,8,7,0.72) 0%, rgba(10,8,7,0.88) 100%);
+    z-index: 0;
+  }
+  .hero__copy > * { position: relative; z-index: 1; }
 }
 
 /* ───────── PROMO STRIP ───────── */
